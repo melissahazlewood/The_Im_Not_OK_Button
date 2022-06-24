@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">The I\'m Not OK Button</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="main_buttons_fragment_label">Main Buttons Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="national_helpline_text">Call National Helpline</string>
+    <string name="im_not_ok_btn_text">I\'m not OK</string>
+    <string name="help_plan_btn_text">Edit Help Plan</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="call_national_helpline">Call National Helpline</string>
+</resources>
