@@ -54,11 +54,11 @@ public class MainButtonsFragment extends Fragment {
                 Snackbar.make(view, "(Texting support person(s)...", Snackbar.LENGTH_LONG).show();
 
                 if (ContextCompat.checkSelfPermission(
-                        getContext(), Manifest.permission.SEND_SMS) ==
-                        PackageManager.PERMISSION_GRANTED) {
+                        getContext(), Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED) {
                     // You can use the API that requires the permission.
                     //TODO: performAction();
                     SmsManager sm = SmsManager.getDefault();
+                    textMessage = "I'm not ok. Please reach out to me.";
                     sm.sendTextMessage("recipientPhoneNumber", null, textMessage, null, null);
                 }
                 // TODO:
