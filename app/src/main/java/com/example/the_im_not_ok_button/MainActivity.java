@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -21,12 +23,17 @@ import androidx.navigation.ui.NavigationUI;
 import android.view.Menu;
 import android.view.MenuItem;
 import androidx.appcompat.widget.Toolbar;
+
+import android.widget.Toast;
 import android.widget.VideoView;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+    private ContactViewModel contactViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitleTextColor(Color.parseColor("#00000000"));
 
 
-
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
@@ -49,6 +55,15 @@ public class MainActivity extends AppCompatActivity {
         Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.background_vid1);
         background_vid.setVideoURI(uri);
         background_vid.start();
+
+        contactViewModel = new ViewModelProvider(this).get(ContactViewModel.class);
+        contactViewModel.getAllContacts().observe(this, new Observer<List<Contact>>() {
+            @Override
+            public void onChanged(List<Contact> contacts) {
+                //TODO: update help plan
+//                Toast.makeText(MainActivity.this, "onChanged", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     //    @Override

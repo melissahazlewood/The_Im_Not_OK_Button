@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.example.the_im_not_ok_button.HelpPlanFragment"
-        android:label="@string/second_fragment_label"
+        android:label="@string/help_plan_fragment_label"
         tools:layout="@layout/fragment_help_plan">
 
         <action
