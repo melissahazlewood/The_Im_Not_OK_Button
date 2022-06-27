@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -27,8 +28,13 @@ import com.google.android.material.snackbar.Snackbar;
 public class MainButtonsFragment extends Fragment {
 
     private FragmentMainButtonsBinding binding;
-    private String textMessage; //TODO get text string from help plan/tutorial
+    private String recipientName;
     private String recipientPhoneNumber; //TODO change to a list for multiple recipients? + TODO: get phone number(s) from help plan/tutorial
+    private String textMessage; //TODO get text string from help plan/tutorial
+
+    private EditText recipientName_txtBox;
+    private EditText textMessage_txtBox;
+    private EditText recipientPhoneNumber_txtBox;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -58,8 +64,10 @@ public class MainButtonsFragment extends Fragment {
                     // You can use the API that requires the permission.
                     //TODO: performAction();
                     SmsManager sm = SmsManager.getDefault();
-                    textMessage = "I'm not ok. Please reach out to me.";
-                    sm.sendTextMessage("recipientPhoneNumber", null, textMessage, null, null);
+                    recipientName = "Melissa";
+                    recipientPhoneNumber = "+15628812240";
+                    textMessage = "I'm not ok. Please reach out to me. -- Sent via the Not OK Button app";
+                    sm.sendTextMessage(recipientPhoneNumber, null, textMessage, null, null);
                 }
                 // TODO:
                 else if (shouldShowRequestPermissionRationale(Manifest.permission.SEND_SMS)) {
