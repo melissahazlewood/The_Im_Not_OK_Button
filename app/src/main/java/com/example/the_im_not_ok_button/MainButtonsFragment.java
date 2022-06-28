@@ -63,11 +63,25 @@ public class MainButtonsFragment extends Fragment {
                         getContext(), Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED) {
                     // You can use the API that requires the permission.
                     //TODO: performAction();
-                    SmsManager sm = SmsManager.getDefault();
-                    recipientName = "Melissa";
+
+
+                    recipientName_txtBox = view.findViewById(R.id.name_txtbox);
+//                    recipientPhoneNumber_txtBox = view.findViewById(R.id.phone_number_txtbox);
+                    textMessage_txtBox = view.findViewById(R.id.message_txtbox);
+
+                    recipientName = (recipientName_txtBox == null)? "Melissa" : recipientName_txtBox.getText().toString();
+//                    recipientPhoneNumber = (recipientPhoneNumber_txtBox == null)? "+15628812240" : recipientPhoneNumber_txtBox.getText().toString().trim(); //TODO: write fxn to check for +1 or add it if not there
+                    //TODO: make the message signature always active/used even when message is custom
+                    textMessage = (textMessage_txtBox == null)? (recipientName + ", " + "I'm not ok. Please reach out to me. \n\n-- Sent via the Not OK Button app") : textMessage_txtBox.getText().toString();
+                    System.out.println(recipientName);
+//                    System.out.println(recipientPhoneNumber);
+                    System.out.println(textMessage);
+
                     recipientPhoneNumber = "+15628812240";
-                    textMessage = "I'm not ok. Please reach out to me. -- Sent via the Not OK Button app";
+
+                    SmsManager sm = SmsManager.getDefault();
                     sm.sendTextMessage(recipientPhoneNumber, null, textMessage, null, null);
+                    Toast.makeText(view.getContext(), "Sent.", Toast.LENGTH_SHORT).show();
                 }
                 // TODO:
                 else if (shouldShowRequestPermissionRationale(Manifest.permission.SEND_SMS)) {
@@ -120,5 +134,4 @@ public class MainButtonsFragment extends Fragment {
                     //TODO
                 }
             });
-
 }
