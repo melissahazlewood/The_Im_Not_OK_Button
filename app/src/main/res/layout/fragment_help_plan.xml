@@ -10,44 +10,76 @@
     <EditText
         android:id="@+id/name_txtbox"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="32dp"
         android:layout_marginStart="32dp"
-        android:layout_marginEnd="96dp"
-        android:layout_marginTop="32dp"
-        android:paddingHorizontal="15dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginTop="64dp"
         android:background="@drawable/ic_one_line_text_rectangle"
         android:ems="10"
         android:fontFamily="@font/comfortaa"
         android:hint="@string/hint_txt_recipient_name"
         android:inputType="text"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/contacts_button"/>
+        android:paddingHorizontal="15dp"
+        app:layout_constraintEnd_toStartOf="@id/contacts_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/comfortaa"
+        android:text="@string/recipients_label"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/name_txtbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/contacts_button"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/ic_edit_contacts_button"
         android:foreground="?android:selectableItemBackgroundBorderless"
-        android:layout_marginRight="32dp"
-        app:layout_constraintStart_toEndOf="@id/name_txtbox"
         app:layout_constraintBottom_toBottomOf="@+id/name_txtbox"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/name_txtbox" />
 
     <ImageView
         android:id="@+id/contacts_icon"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
         android:background="@drawable/ic_edit_contacts"
         app:layout_constraintStart_toStartOf="@id/contacts_button"
         app:layout_constraintBottom_toBottomOf="@+id/contacts_button"
         app:layout_constraintEnd_toEndOf="@id/contacts_button"
         app:layout_constraintTop_toTopOf="@+id/contacts_button" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/comfortaa"
+        android:text="@string/text_message_body_label"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/message_txtbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <EditText
         android:id="@+id/message_txtbox"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/ic_multiline_text_rectangle"
@@ -56,7 +88,7 @@
         android:gravity="top|start"
         android:hint="@string/hint_txt_im_not_ok_message"
         android:inputType="textMultiLine"
-        android:lines="10"
+        android:lines="5"
         android:paddingVertical="15dp"
         android:paddingHorizontal="15dp"
         app:layout_constraintBottom_toTopOf="@+id/button_second"
