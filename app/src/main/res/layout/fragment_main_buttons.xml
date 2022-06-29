@@ -36,6 +36,7 @@
         android:layout_marginStart="64dp"
         android:layout_marginEnd="64dp"
         android:layout_marginBottom="32dp"
+        android:paddingBottom="5dp"
         android:background="@drawable/ic_help_plan_button_unclicked"
         android:fontFamily="@font/comfortaa"
         android:foreground="?android:selectableItemBackgroundBorderless"

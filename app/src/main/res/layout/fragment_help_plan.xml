@@ -102,6 +102,8 @@
         android:layout_height="72dp"
         android:layout_marginBottom="32dp"
         android:layout_marginHorizontal="64dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="32dp"
         android:text="@string/save_help_plan_btn_text"
         android:fontFamily="@font/comfortaa"
         android:foreground="?android:selectableItemBackgroundBorderless"
@@ -113,4 +115,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="26dp"
+        app:layout_constraintBottom_toBottomOf="@+id/button_save_help_plan"
+        app:layout_constraintStart_toStartOf="@+id/button_save_help_plan"
+        app:layout_constraintTop_toTopOf="@+id/button_save_help_plan"
+        app:srcCompat="@drawable/ic_save_icon"
+        android:elevation="@dimen/cardview_default_elevation"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
