@@ -38,20 +38,10 @@ public class HelpPlanFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
+        binding.buttonSaveHelpPlan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                recipientName_txtBox = view.findViewById(R.id.name_txtbox);
-//                recipientPhoneNumber_txtBox = view.findViewById(R.id.phone_number_txtbox);
-                textMessage_txtBox = view.findViewById(R.id.message_txtbox);
-
-                recipientName = recipientName_txtBox.getText().toString();
-//                recipientPhoneNumber = recipientPhoneNumber_txtBox.getText().toString().trim();
-                textMessage = textMessage_txtBox.getText().toString();
-                System.out.println(recipientName);
-//                System.out.println(recipientPhoneNumber);
-                System.out.println(textMessage);
+                //TODO: save the message (if changed)
 
 
                 NavHostFragment.findNavController(HelpPlanFragment.this)

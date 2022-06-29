@@ -13,4 +13,6 @@
     <string name="hint_txt_im_not_ok_message">I\'m not OK. Please reach out.</string>
     <string name="recipients_label">Recipient(s):</string>
     <string name="text_message_body_label">Text Message Body:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
