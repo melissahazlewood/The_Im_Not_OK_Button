@@ -48,6 +48,14 @@ public class HelpPlanFragment extends Fragment {
                         .navigate(R.id.action_SecondFragment_to_FirstFragment);
             }
         });
+
+        binding.contactsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(HelpPlanFragment.this)
+                        .navigate(R.id.action_SecondFragment_to_ThirdFragment);
+            }
+        });
     }
 
     @Override
